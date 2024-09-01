@@ -22,6 +22,8 @@ const LandingTab = () => {
                 style={styles.pattern}
                 source={require('../../assets/squarePattern.png')}
             >
+            </ImageBackground>
+            <View style={styles.contentContainer}>
                 <Text style={styles.title}>IntelliNest</Text>
                 <View style={styles.buttonsRow}>
                     <TouchableOpacity 
@@ -37,7 +39,7 @@ const LandingTab = () => {
                         <Text style={styles.loginText}>Login</Text>
                     </TouchableOpacity>
                 </View>
-            </ImageBackground>
+            </View>
         </LinearGradient>
     );
 }
@@ -50,6 +52,16 @@ const styles = StyleSheet.create({
     },
     pattern: {
         flex: 1,
+        opacity: 0.7,
+    },
+    contentContainer: {
+        position: 'absolute',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     buttonsRow: {
         display: 'flex',
@@ -74,7 +86,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     signinText: {
-        fontSize: 32,
+        fontSize: 28,
         fontWeight: 'semibold',
         textAlign: 'center',
         color: '#FFFFFF'
@@ -87,7 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     loginText: {
-        fontSize: 32,
+        fontSize: 28,
         fontWeight: 'semibold',
         textAlign: 'center',
         color: '#4EB7AC'

@@ -25,9 +25,21 @@ export const LandingStack = () => {
                 }
             }}
         >
-            <Stack.Screen name="landing" component={LandingTab} />
-            <Stack.Screen name="login" component={LoginTab} />
-            <Stack.Screen name="signin" component={LoginTab} />
+            <Stack.Screen 
+                name="landing" 
+                component={LandingTab} 
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen 
+                name="login" 
+                component={LoginTab} 
+                options={{ headerShown: false }}
+            />
+            <Stack.Screen 
+                name="signin" 
+                component={LoginTab} 
+                options={{ headerShown: false }}
+            />
         </Stack.Navigator>
     );
 }
