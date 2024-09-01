@@ -10,5 +10,6 @@ export const colors = {
 
     //buttons and interactable components
     inputField: '#F8F8F8',
+    inputOutline: '#DCDCDC',
     mainButton: '#5DBE78',
 }
