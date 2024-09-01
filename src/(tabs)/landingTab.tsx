@@ -26,7 +26,7 @@ const LandingTab = () => {
                 <View style={styles.buttonsRow}>
                     <TouchableOpacity 
                         style={styles.signinButton}
-                        onPress={()=>signIn()}
+                        onPress={()=>navigation.navigate('signin')}
                     >
                         <Text style={styles.signinText}>Cadastro</Text>
                     </TouchableOpacity>

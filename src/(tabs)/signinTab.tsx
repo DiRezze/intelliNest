@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const signinTab = () => {
+const SigninTab = () => {
   return (
     <View>
       <Text>signinTab</Text>
@@ -9,6 +9,6 @@ const signinTab = () => {
   )
 }
 
-export default signinTab
+export default SigninTab
 
 const styles = StyleSheet.create({})
