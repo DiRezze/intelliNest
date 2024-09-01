@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
 
@@ -10,15 +10,20 @@ const LandingTab = () => {
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}
     >
-        <Text style={styles.title}>IntelliNest</Text>
-        <View style={styles.buttonsRow}>
-            <TouchableOpacity style={styles.signinButton}>
-                <Text style={styles.signinText}>Cadastro</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.loginButton}>
-                <Text style={styles.loginText}>Login</Text>
-            </TouchableOpacity>
-        </View>
+        <ImageBackground
+            style={styles.pattern}
+            source={require('../../assets/squarePattern.png')}
+        >
+            <Text style={styles.title}>IntelliNest</Text>
+            <View style={styles.buttonsRow}>
+                <TouchableOpacity style={styles.signinButton}>
+                    <Text style={styles.signinText}>Cadastro</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.loginButton}>
+                    <Text style={styles.loginText}>Login</Text>
+                </TouchableOpacity>
+            </View>
+        </ImageBackground>
     </LinearGradient>
   );
 }
@@ -27,6 +32,9 @@ export default LandingTab
 
 const styles = StyleSheet.create({
     tabContainer: {
+        flex: 1,
+    },
+    pattern: {
         flex: 1,
     },
     buttonsRow: {
