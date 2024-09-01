@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const loginTab = () => {
+const LoginTab = () => {
   return (
     <View>
-      <Text>loginTab</Text>
+      <Text>LoginTab</Text>
     </View>
   )
 }
 
-export default loginTab
+export default LoginTab
 
 const styles = StyleSheet.create({})

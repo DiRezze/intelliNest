@@ -8,7 +8,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvides = ({children} : {children : ReactNode}) => {
+export const AuthProvider = ({children} : {children : ReactNode}) => {
 
     const [isLogged, setIsLogged] = useState<boolean>(false);
 

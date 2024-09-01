@@ -1,7 +1,7 @@
-import Routes from "./src/routes";
+import AppRoutes from "./src/routes/index.routes";
 
 export default function App() {
   return (
-    <Routes />
+    <AppRoutes />
   );
 }
