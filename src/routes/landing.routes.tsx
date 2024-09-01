@@ -27,6 +27,7 @@ export const LandingStack = () => {
         >
             <Stack.Screen name="landing" component={LandingTab} />
             <Stack.Screen name="login" component={LoginTab} />
+            <Stack.Screen name="signin" component={LoginTab} />
         </Stack.Navigator>
     );
 }
