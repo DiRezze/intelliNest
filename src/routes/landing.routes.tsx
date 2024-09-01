@@ -1,6 +1,7 @@
 import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
 import LoginTab from "../(tabs)/loginTab";
 import LandingTab from "../(tabs)/landingTab";
+import SigninTab from "../(tabs)/signinTab";
 
 const Stack = createStackNavigator();
 
@@ -37,7 +38,7 @@ export const LandingStack = () => {
             />
             <Stack.Screen 
                 name="signin" 
-                component={LoginTab} 
+                component={SigninTab} 
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>

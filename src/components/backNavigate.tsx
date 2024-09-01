@@ -26,6 +26,9 @@ const styles = StyleSheet.create({
         width: '50%',
         alignItems: 'center',
         padding: 6,
+        position: 'absolute',
+        top: 0,
+        zIndex: 999,
     },
     btnText: {
         color: '#FEFEFE',

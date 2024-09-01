@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { Feather } from '@expo/vector-icons';
 import Home from "../(tabs)/homeTab";
 import LandingTab from '../(tabs)/landingTab';
+import DebugTab from '../(tabs)/debugTab';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,15 +20,15 @@ export default function TabRoutes(){
                 component={Home}
                 options={{
                     tabBarIcon: ({color, size}) => <Feather name="home" color={color} size={size} />,
-                    tabBarLabel: "Home",
+                    tabBarLabel: "Início",
                 }}
             />
             <Tab.Screen
-                name="landing"
-                component={LandingTab}
+                name="Debug"
+                component={DebugTab}
                 options={{
-                    tabBarIcon: ({color, size}) => <Feather name="code" color={color} size={size} />,
-                    tabBarLabel: "Landing"
+                    tabBarIcon: ({color, size}) => <Feather name="terminal" color={color} size={size} />,
+                    tabBarLabel: "Depuração"
                 }}
             />
         </Tab.Navigator>

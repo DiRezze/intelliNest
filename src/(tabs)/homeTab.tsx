@@ -3,12 +3,18 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <View>
-      <Text>Tela inicial</Text>
+    <View style={styles.container}>
+      <Text>Você está logado :D</Text>
     </View>
   )
 }
 
 export default Home;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  }
+});
