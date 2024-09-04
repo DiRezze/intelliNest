@@ -26,6 +26,11 @@ const styles = StyleSheet.create({
     borderRadius: 42,
     backgroundColor: colors.mainButton,
     width: "auto",
+    height: 42,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     minWidth: "40%",
   },
   text: {

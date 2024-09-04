@@ -8,9 +8,10 @@ type FeatherIconName = keyof typeof Feather.glyphMap;
 interface InputFieldProps {
     iconName: FeatherIconName;
     placeholder: string;
+    secure: boolean;
 }
 
-const InputField:React.FC<InputFieldProps> = ({iconName, placeholder}) => {
+const InputField:React.FC<InputFieldProps> = ({iconName, placeholder, secure}) => {
     const [text, setText] = useState<String>('');
   return (
     <View style={styles.inputContainer}>
@@ -19,6 +20,7 @@ const InputField:React.FC<InputFieldProps> = ({iconName, placeholder}) => {
             style={styles.input}
             placeholder={placeholder}
             onChangeText={setText}
+            secureTextEntry={secure}
         />
     </View>
   )

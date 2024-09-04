@@ -20,11 +20,11 @@ const SigninTab = () => {
         source={require("../../assets/squarePattern.png")}
       ></ImageBackground>
       <View style={styles.formContainer}>
-        <Text style={styles.title}>Login</Text>
-        <InputField iconName={"hash"} placeholder={"Nome"} />
-        <InputField iconName={"mail"} placeholder={"E-mail"} />
-        <InputField iconName={"key"} placeholder={"Senha"} />
-        <InputField iconName={"key"} placeholder={"Confirmar senha"} />
+        <Text style={styles.title}>Cadastro</Text>
+        <InputField iconName={"hash"} placeholder={"Nome"} secure={false} />
+        <InputField iconName={"mail"} placeholder={"E-mail"} secure={false} />
+        <InputField iconName={"key"} placeholder={"Senha"} secure={true} />
+        <InputField iconName={"key"} placeholder={"Confirmar senha"} secure={true} />
         <PrimaryButton textContent={"Criar conta"} />
       </View>
     </LinearGradient>

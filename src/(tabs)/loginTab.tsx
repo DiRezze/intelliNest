@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { colors } from "../constants/colors";
@@ -21,8 +21,11 @@ const LoginTab = () => {
       ></ImageBackground>
       <View style={styles.formContainer}>
         <Text style={styles.title}>Login</Text>
-        <InputField iconName={"mail"} placeholder={"E-mail"} />
-        <InputField iconName={"key"} placeholder={"Senha"} />
+        <InputField iconName={"mail"} placeholder={"E-mail"} secure={false} />
+        <InputField iconName={"key"} placeholder={"Senha"} secure={true}/>
+        <TouchableOpacity>
+          <Text style={styles.forgot}>Esqueceu sua senha?</Text>
+        </TouchableOpacity>
         <PrimaryButton textContent={"Login"} />
       </View>
     </LinearGradient>
@@ -60,5 +63,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 32,
     color: colors.colorTitle,
+  },
+  forgot: {
+    color: colors.colorTitle,
+    fontSize: 14,
+    margin: 6,
+    textAlign: 'center'
   },
 });
