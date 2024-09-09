@@ -11,6 +11,9 @@ web-build/
 #WebStorm
 .idea/
 
+# Env Variables
+.env
+
 # Native
 *.orig.*
 *.jks
