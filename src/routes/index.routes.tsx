@@ -4,10 +4,10 @@ import { AuthProvider, useAuth } from "../contexts/authContext";
 import { LandingStack } from "./landing.routes";
 
 function Routes(){
-    const {isLogged} = useAuth();
+    const {isAuthenticated} = useAuth();
     return(
         <NavigationContainer>
-            {isLogged ? <TabRoutes /> : <LandingStack />}
+            {isAuthenticated ? <TabRoutes /> : <LandingStack />}
         </NavigationContainer>
     );
 }

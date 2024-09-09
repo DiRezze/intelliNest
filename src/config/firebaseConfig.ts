@@ -1,6 +1,6 @@
 import { initializeApp, FirebaseApp, FirebaseOptions } from 'firebase/app';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { getAuth, Auth, initializeAuth, Persistence } from 'firebase/auth';
+import { Auth, initializeAuth,signInWithEmailAndPassword, onAuthStateChanged, User } from 'firebase/auth';
 
 const firebaseConfig: FirebaseOptions = {
   apiKey: process.env.API_KEY,
@@ -16,4 +16,4 @@ const app: FirebaseApp = initializeApp(firebaseConfig);
 
 const auth: Auth = initializeAuth(app);
 
-export { app, auth };
+export { app, auth, User, signInWithEmailAndPassword, onAuthStateChanged };

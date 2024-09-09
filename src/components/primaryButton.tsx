@@ -1,7 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { colors } from "../constants/colors";
-import { useAuth } from "../contexts/authContext";
 
 interface PrimaryButtonProps {
   textContent: String;
@@ -9,7 +8,6 @@ interface PrimaryButtonProps {
 }
 
 const PrimaryButton: React.FC<PrimaryButtonProps> = ({ textContent , action}) => {
-  const { signIn } = useAuth();
   return (
     <TouchableOpacity style={styles.container} onPress={action}>
       <Text style={styles.text}>{textContent}</Text>
