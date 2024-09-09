@@ -1,12 +1,41 @@
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import React from "react";
+import React, { useState } from "react";
+import { Feather } from "@expo/vector-icons";
 import { colors } from "../constants/colors";
 import BackNavigateButton from "../components/backNavigate";
-import InputField from "../components/inputField";
+import { auth } from "../config/firebaseConfig";
 import PrimaryButton from "../components/primaryButton";
+import {
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+} from "react-native";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SigninTab = () => {
+
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [repass, setRepass] = useState<string>("");
+
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
+  const handleSignup = async () => {
+    if (password !== repass){
+      setErrorMessage("As senhas não coincidem.");
+      //TODO: Criar um toast que exiba as mensagens de erro
+      return;
+    }
+    try{
+      await createUserWithEmailAndPassword(auth, email, password);
+    } catch(error){
+      console.log("Erro ao criar usuário: ", error);
+    }
+
+  }
+
   return (
     <LinearGradient
       style={styles.tabContainer}
@@ -21,11 +50,41 @@ const SigninTab = () => {
       ></ImageBackground>
       <View style={styles.formContainer}>
         <Text style={styles.title}>Cadastro</Text>
-        <InputField iconName={"hash"} placeholder={"Nome"} secure={false} />
-        <InputField iconName={"mail"} placeholder={"E-mail"} secure={false} />
-        <InputField iconName={"key"} placeholder={"Senha"} secure={true} />
-        <InputField iconName={"key"} placeholder={"Confirmar senha"} secure={true} />
-        <PrimaryButton textContent={"Criar conta"} />
+
+        <View style={styles.inputContainer}>
+          <Feather name="mail" size={28} style={styles.icon} />
+          <TextInput
+            value={email}
+            style={styles.input}
+            placeholder={"E-mail"}
+            onChangeText={setEmail}
+            secureTextEntry={false}
+          />
+        </View>
+
+        <View style={styles.inputContainer}>
+          <Feather name="key" size={28} style={styles.icon} />
+          <TextInput
+            value={password}
+            style={styles.input}
+            placeholder={"Crie uma senha"}
+            onChangeText={setPassword}
+            secureTextEntry={true}
+          />
+        </View>
+
+        <View style={styles.inputContainer}>
+          <Feather name="key" size={28} style={styles.icon} />
+          <TextInput
+            value={repass}
+            style={styles.input}
+            placeholder={"Confirme sua senha"}
+            onChangeText={setRepass}
+            secureTextEntry={true}
+          />
+        </View>
+
+        <PrimaryButton textContent={"Criar conta"} action={handleSignup}/>
       </View>
     </LinearGradient>
   );
@@ -62,5 +121,32 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 32,
     color: colors.colorTitle,
+  },
+  inputContainer: {
+    backgroundColor: colors.ui_white,
+    borderRadius: 8,
+    borderColor: colors.inputOutline,
+    borderWidth: 1,
+    maxWidth: "90%",
+    marginVertical: 6,
+    height: "auto",
+    display: "flex",
+    flexDirection: "row",
+    width: "95%",
+    alignItems: "center",
+    elevation: 2,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 3,
+  },
+  icon: {
+    marginVertical: 8,
+    marginLeft: 8,
+    color: colors.colorTitle,
+  },
+  input: {
+    flex: 1,
+    margin: 8,
   },
 });

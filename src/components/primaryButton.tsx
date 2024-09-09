@@ -5,12 +5,13 @@ import { useAuth } from "../contexts/authContext";
 
 interface PrimaryButtonProps {
   textContent: String;
+  action: ( ) => void;
 }
 
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({ textContent }) => {
+const PrimaryButton: React.FC<PrimaryButtonProps> = ({ textContent , action}) => {
   const { signIn } = useAuth();
   return (
-    <TouchableOpacity style={styles.container} onPress={() => signIn()}>
+    <TouchableOpacity style={styles.container} onPress={action}>
       <Text style={styles.text}>{textContent}</Text>
     </TouchableOpacity>
   );
