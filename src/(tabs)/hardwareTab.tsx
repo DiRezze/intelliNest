@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const hardwareTab = () => {
+const Hardware = () => {
   return (
     <View>
-      <Text>hardwareTab</Text>
+      <Text>Hardware</Text>
     </View>
   )
 }
 
-export default hardwareTab
+export default Hardware
 
 const styles = StyleSheet.create({})

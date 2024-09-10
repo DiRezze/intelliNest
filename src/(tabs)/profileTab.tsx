@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const profileTab = () => {
+const ProfileTab = () => {
   return (
     <View>
       <Text>profileTab</Text>
@@ -9,6 +9,6 @@ const profileTab = () => {
   );
 };
 
-export default profileTab;
+export default ProfileTab;
 
 const styles = StyleSheet.create({});
