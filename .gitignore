@@ -9,6 +9,8 @@ web-build/
 #WebStorm
 .idea/
 
+.%ProgramData%/
+
 # Env Variables
 .env
 

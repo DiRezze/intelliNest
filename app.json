@@ -12,16 +12,34 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber": "1.0.0",
+      "bundleIdentifier": "id",
+      "config": {
+        "usesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "android": {
+        "versionCode": 4,
+        "buildType": "apk"
+      },
+      "package": "com.direzze.intellinest"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a0477b65-1b98-4c79-8f8e-108f15ecbe31"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }
