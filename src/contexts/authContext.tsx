@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useState} from 'react';
-import { auth, signInWithEmailAndPassword, onAuthStateChanged, User } from '../config/firebaseConfig';
+import { auth, onAuthStateChanged, User } from '../config/firebaseConfig';
 import { doSignInWithEmailAndPassword, doSignOut } from '../config/auth';
 import Loader from '../components/loader';
 
