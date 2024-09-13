@@ -12,6 +12,7 @@ import { colors } from "../constants/colors";
 import { Feather } from "@expo/vector-icons";
 import BackNavigateButton from "../components/backNavigate";
 import { useAuth } from "../contexts/authContext";
+import OrDivider from "../components/orDivider";
 
 const LoginTab = () => {
   const { signIn } = useAuth();
