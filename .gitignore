@@ -6,8 +6,11 @@ node_modules/
 dist/
 web-build/
 
-#WebStorm
+# WebStorm
 .idea/
+
+# Program Data
+%ProgramData%/
 
 # Env Variables
 .env

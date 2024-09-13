@@ -12,4 +12,6 @@ export const colors = {
     inputField: '#F8F8F8',
     inputOutline: '#DCDCDC',
     mainButton: '#5DBE78',
+
+    cardOutline: '#D0D0D0',
 }
