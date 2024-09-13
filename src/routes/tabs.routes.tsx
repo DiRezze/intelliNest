@@ -5,6 +5,7 @@ import DebugTab from '../(tabs)/debugTab';
 import Home from "../(tabs)/homeTab";
 import * as React from 'react';
 import ProfileTab from '../(tabs)/profileTab';
+import HardwareStack from './stacks/hardwareStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,8 +28,8 @@ export default function TabRoutes(){
                 }}
             />
             <Tab.Screen
-                name="Hardware"
-                component={Hardware}
+                name="HardwareStack"
+                component={HardwareStack}
                 options={{
                     tabBarIcon: ({color, size}) => <Feather name="cpu" color={color} size={size} />,
                     tabBarLabel: "Hardware",

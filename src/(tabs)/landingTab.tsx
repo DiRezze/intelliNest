@@ -9,8 +9,6 @@ const LandingTab = () => {
 
     const navigation = useNavigation<LandingTabNavigationProp>();
 
-    const {signIn} = useAuth();
-
     return (
         <LinearGradient
             style={styles.tabContainer}
