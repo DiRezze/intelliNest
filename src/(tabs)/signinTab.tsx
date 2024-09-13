@@ -13,6 +13,7 @@ import {
   TextInput,
 } from "react-native";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import InputField from "../components/inputField";
 
 const SigninTab = () => {
 
@@ -50,40 +51,24 @@ const SigninTab = () => {
       ></ImageBackground>
       <View style={styles.formContainer}>
         <Text style={styles.title}>Cadastro</Text>
-
-        <View style={styles.inputContainer}>
-          <Feather name="mail" size={28} style={styles.icon} />
-          <TextInput
-            value={email}
-            style={styles.input}
-            placeholder={"E-mail"}
-            onChangeText={setEmail}
-            secureTextEntry={false}
-          />
-        </View>
-
-        <View style={styles.inputContainer}>
-          <Feather name="key" size={28} style={styles.icon} />
-          <TextInput
-            value={password}
-            style={styles.input}
-            placeholder={"Crie uma senha"}
-            onChangeText={setPassword}
-            secureTextEntry={true}
-          />
-        </View>
-
-        <View style={styles.inputContainer}>
-          <Feather name="key" size={28} style={styles.icon} />
-          <TextInput
-            value={repass}
-            style={styles.input}
-            placeholder={"Confirme sua senha"}
-            onChangeText={setRepass}
-            secureTextEntry={true}
-          />
-        </View>
-
+        <InputField
+          placeholder="E-mail"
+          iconName="mail"
+          callback={setEmail}
+          secure={false}
+        />
+        <InputField
+          placeholder="Crie uma senha"
+          iconName="key"
+          callback={setPassword}
+          secure={true}
+        />
+        <InputField
+          placeholder="Repita a senha"
+          iconName="key"
+          callback={setRepass}
+          secure={true}
+        />
         <PrimaryButton textContent={"Criar conta"} action={handleSignup}/>
       </View>
     </LinearGradient>
@@ -121,32 +106,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 32,
     color: colors.colorTitle,
-  },
-  inputContainer: {
-    backgroundColor: colors.ui_white,
-    borderRadius: 8,
-    borderColor: colors.inputOutline,
-    borderWidth: 1,
-    maxWidth: "90%",
-    marginVertical: 6,
-    height: "auto",
-    display: "flex",
-    flexDirection: "row",
-    width: "95%",
-    alignItems: "center",
-    elevation: 2,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
-    shadowRadius: 3,
-  },
-  icon: {
-    marginVertical: 8,
-    marginLeft: 8,
-    color: colors.colorTitle,
-  },
-  input: {
-    flex: 1,
-    margin: 8,
   },
 });

@@ -4,12 +4,13 @@ import { colors } from "../constants/colors";
 
 interface PrimaryButtonProps {
   textContent: String;
-  action: ( ) => void;
+  action: (...args: any[] ) => void;
+  params?: any[];
 }
 
-const PrimaryButton: React.FC<PrimaryButtonProps> = ({ textContent , action}) => {
+const PrimaryButton: React.FC<PrimaryButtonProps> = ({ textContent , action, params = []}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={action}>
+    <TouchableOpacity style={styles.container} onPress={()=>action(...params)}>
       <Text style={styles.text}>{textContent}</Text>
     </TouchableOpacity>
   );

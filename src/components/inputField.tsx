@@ -34,7 +34,7 @@ const InputField: React.FC<InputFieldProps> = ({ iconName, placeholder, secure, 
         <TouchableOpacity onPress={() => setHide(!hide)}>
           <Feather
             name={hide ? "eye-off" : "eye"}
-            size={28}
+            size={24}
             style={styles.hideIcon}
           />
         </TouchableOpacity>
